@@ -1,0 +1,2615 @@
+{
+  "source": {
+    "type": "image",
+    "image": {
+      "name": "mywebapp",
+      "digest": "sha256:2504a3082f4da28838fa8560ca19f70be19110cd67210c8fc88042d4a8d23e71",
+      "tags": [
+        "SECURE"
+      ],
+      "manifest": {
+        "schemaVersion": 2,
+        "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+        "config": {
+          "mediaType": "application/vnd.docker.container.image.v1+json",
+          "size": 1859,
+          "digest": "sha256:2504a3082f4da28838fa8560ca19f70be19110cd67210c8fc88042d4a8d23e71"
+        },
+        "layers": [
+          {
+            "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+            "size": 9993337,
+            "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469"
+          },
+          {
+            "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+            "size": 842,
+            "digest": "sha256:be325722171b80550b2e6e81c1f5833b757d5231615f6cc7058a244566301a0a"
+          }
+        ]
+      },
+      "config": {
+        "architecture": "amd64",
+        "author": "github.com/chainguard-dev/apko",
+        "created": "2024-09-17T08:52:43.749230963Z",
+        "history": [
+          {
+            "author": "apko",
+            "created": "2024-09-16T19:47:46Z",
+            "created_by": "apko",
+            "comment": "This is an apko single-layer image"
+          },
+          {
+            "created": "2024-09-17T08:52:43.749230963Z",
+            "created_by": "COPY ./webapp /usr/share/nginx/html # buildkit",
+            "comment": "buildkit.dockerfile.v0"
+          },
+          {
+            "created": "2024-09-17T08:52:43.749230963Z",
+            "created_by": "EXPOSE map[80/tcp:{}]",
+            "comment": "buildkit.dockerfile.v0",
+            "empty_layer": true
+          },
+          {
+            "created": "2024-09-17T08:52:43.749230963Z",
+            "created_by": "HEALTHCHECK &{[\"CMD-SHELL\" \"curl -f http://localhost/ || exit 1\"] \"30s\" \"10s\" \"0s\" \"0s\" '\\x03'}",
+            "comment": "buildkit.dockerfile.v0",
+            "empty_layer": true
+          },
+          {
+            "created": "2024-09-17T08:52:43.749230963Z",
+            "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
+            "comment": "buildkit.dockerfile.v0",
+            "empty_layer": true
+          }
+        ],
+        "os": "linux",
+        "rootfs": {
+          "type": "layers",
+          "diff_ids": [
+            "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+            "sha256:a2e1b77a56a25d35cff67061683c7ebb197f28ee030d1eda3f2cd8b2f234c687"
+          ]
+        },
+        "config": {
+          "Cmd": [
+            "nginx",
+            "-g",
+            "daemon off;"
+          ],
+          "Healthcheck": {
+            "Test": [
+              "CMD-SHELL",
+              "curl -f http://localhost/ || exit 1"
+            ],
+            "Interval": 30000000000,
+            "Timeout": 10000000000,
+            "Retries": 3
+          },
+          "Entrypoint": [
+            "/usr/sbin/nginx"
+          ],
+          "Env": [
+            "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt"
+          ],
+          "Labels": {
+            "org.opencontainers.image.authors": "Chainguard Team https://www.chainguard.dev/",
+            "org.opencontainers.image.source": "https://github.com/chainguard-images/images/tree/main/images/nginx",
+            "org.opencontainers.image.url": "https://images.chainguard.dev/directory/image/nginx/overview",
+            "org.opencontainers.image.vendor": "Chainguard"
+          },
+          "User": "65532",
+          "ExposedPorts": {
+            "80/tcp": {}
+          },
+          "ArgsEscaped": true,
+          "StopSignal": "SIGQUIT"
+        }
+      },
+      "raw_manifest": "eyJzY2hlbWFWZXJzaW9uIjoyLCJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmRpc3RyaWJ1dGlvbi5tYW5pZmVzdC52Mitqc29uIiwiY29uZmlnIjp7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuY29udGFpbmVyLmltYWdlLnYxK2pzb24iLCJzaXplIjoxODU5LCJkaWdlc3QiOiJzaGEyNTY6MjUwNGEzMDgyZjRkYTI4ODM4ZmE4NTYwY2ExOWY3MGJlMTkxMTBjZDY3MjEwYzhmYzg4MDQyZDRhOGQyM2U3MSJ9LCJsYXllcnMiOlt7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLCJzaXplIjo5OTkzMzM3LCJkaWdlc3QiOiJzaGEyNTY6MmRlMDZkZjg2YTFkMDgzZjJhYjg5MDc4ZTg1ODk5NDNiYjNjMDA3YmE0OGNmN2YyZjQ3MTkyNmIwMzFlOTQ2OSJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjg0MiwiZGlnZXN0Ijoic2hhMjU2OmJlMzI1NzIyMTcxYjgwNTUwYjJlNmU4MWMxZjU4MzNiNzU3ZDUyMzE2MTVmNmNjNzA1OGEyNDQ1NjYzMDFhMGEifV19",
+      "raw_config": "eyJhcmNoaXRlY3R1cmUiOiJhbWQ2NCIsImF1dGhvciI6ImdpdGh1Yi5jb20vY2hhaW5ndWFyZC1kZXYvYXBrbyIsImNvbmZpZyI6eyJVc2VyIjoiNjU1MzIiLCJFeHBvc2VkUG9ydHMiOnsiODAvdGNwIjp7fX0sIkVudiI6WyJQQVRIPS91c3IvbG9jYWwvc2JpbjovdXNyL2xvY2FsL2JpbjovdXNyL3NiaW46L3Vzci9iaW46L3NiaW46L2JpbiIsIlNTTF9DRVJUX0ZJTEU9L2V0Yy9zc2wvY2VydHMvY2EtY2VydGlmaWNhdGVzLmNydCJdLCJFbnRyeXBvaW50IjpbIi91c3Ivc2Jpbi9uZ2lueCJdLCJDbWQiOlsibmdpbngiLCItZyIsImRhZW1vbiBvZmY7Il0sIkxhYmVscyI6eyJvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UuYXV0aG9ycyI6IkNoYWluZ3VhcmQgVGVhbSBodHRwczovL3d3dy5jaGFpbmd1YXJkLmRldi8iLCJvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2Uuc291cmNlIjoiaHR0cHM6Ly9naXRodWIuY29tL2NoYWluZ3VhcmQtaW1hZ2VzL2ltYWdlcy90cmVlL21haW4vaW1hZ2VzL25naW54Iiwib3JnLm9wZW5jb250YWluZXJzLmltYWdlLnVybCI6Imh0dHBzOi8vaW1hZ2VzLmNoYWluZ3VhcmQuZGV2L2RpcmVjdG9yeS9pbWFnZS9uZ2lueC9vdmVydmlldyIsIm9yZy5vcGVuY29udGFpbmVycy5pbWFnZS52ZW5kb3IiOiJDaGFpbmd1YXJkIn0sIlN0b3BTaWduYWwiOiJTSUdRVUlUIiwiQXJnc0VzY2FwZWQiOnRydWUsIkhlYWx0aGNoZWNrIjp7IlRlc3QiOlsiQ01ELVNIRUxMIiwiY3VybCAtZiBodHRwOi8vbG9jYWxob3N0LyB8fCBleGl0IDEiXSwiSW50ZXJ2YWwiOjMwMDAwMDAwMDAwLCJUaW1lb3V0IjoxMDAwMDAwMDAwMCwiUmV0cmllcyI6M319LCJjcmVhdGVkIjoiMjAyNC0wOS0xN1QwODo1Mjo0My43NDkyMzA5NjNaIiwiaGlzdG9yeSI6W3siY3JlYXRlZCI6IjIwMjQtMDktMTZUMTk6NDc6NDZaIiwiY3JlYXRlZF9ieSI6ImFwa28iLCJhdXRob3IiOiJhcGtvIiwiY29tbWVudCI6IlRoaXMgaXMgYW4gYXBrbyBzaW5nbGUtbGF5ZXIgaW1hZ2UifSx7ImNyZWF0ZWQiOiIyMDI0LTA5LTE3VDA4OjUyOjQzLjc0OTIzMDk2M1oiLCJjcmVhdGVkX2J5IjoiQ09QWSAuL3dlYmFwcCAvdXNyL3NoYXJlL25naW54L2h0bWwgIyBidWlsZGtpdCIsImNvbW1lbnQiOiJidWlsZGtpdC5kb2NrZXJmaWxlLnYwIn0seyJjcmVhdGVkIjoiMjAyNC0wOS0xN1QwODo1Mjo0My43NDkyMzA5NjNaIiwiY3JlYXRlZF9ieSI6IkVYUE9TRSBtYXBbODAvdGNwOnt9XSIsImNvbW1lbnQiOiJidWlsZGtpdC5kb2NrZXJmaWxlLnYwIiwiZW1wdHlfbGF5ZXIiOnRydWV9LHsiY3JlYXRlZCI6IjIwMjQtMDktMTdUMDg6NTI6NDMuNzQ5MjMwOTYzWiIsImNyZWF0ZWRfYnkiOiJIRUFMVEhDSEVDSyBcdTAwMjZ7W1wiQ01ELVNIRUxMXCIgXCJjdXJsIC1mIGh0dHA6Ly9sb2NhbGhvc3QvIHx8IGV4aXQgMVwiXSBcIjMwc1wiIFwiMTBzXCIgXCIwc1wiIFwiMHNcIiAnXFx4MDMnfSIsImNvbW1lbnQiOiJidWlsZGtpdC5kb2NrZXJmaWxlLnYwIiwiZW1wdHlfbGF5ZXIiOnRydWV9LHsiY3JlYXRlZCI6IjIwMjQtMDktMTdUMDg6NTI6NDMuNzQ5MjMwOTYzWiIsImNyZWF0ZWRfYnkiOiJDTUQgW1wibmdpbnhcIiBcIi1nXCIgXCJkYWVtb24gb2ZmO1wiXSIsImNvbW1lbnQiOiJidWlsZGtpdC5kb2NrZXJmaWxlLnYwIiwiZW1wdHlfbGF5ZXIiOnRydWV9XSwib3MiOiJsaW51eCIsInJvb3RmcyI6eyJ0eXBlIjoibGF5ZXJzIiwiZGlmZl9pZHMiOlsic2hhMjU2OjdiNGQ3ZGRiMTdmZGE3Njc2ODQzZGRkYzljYjk2Zjk4OWE4ZDY0ZWYxZjc5ZGMyNjYyMjc1ZTU5MGZlZjMyNTAiLCJzaGEyNTY6YTJlMWI3N2E1NmEyNWQzNWNmZjY3MDYxNjgzYzdlYmIxOTdmMjhlZTAzMGQxZWRhM2YyY2Q4YjJmMjM0YzY4NyJdfX0=",
+      "distro": {
+        "os_name": "wolfi",
+        "os_version": "20230201"
+      },
+      "platform": {
+        "os": "linux",
+        "architecture": "amd64"
+      },
+      "size": 9994179
+    }
+  },
+  "attestations": null,
+  "artifacts": [
+    {
+      "type": "apk",
+      "namespace": "wolfi",
+      "name": "ca-certificates-bundle",
+      "version": "20240705-r0",
+      "purl": "pkg:apk/wolfi/ca-certificates-bundle@20240705-r0?os_name=wolfi&os_version=rolling",
+      "licenses": [
+        "MPL-2.0",
+        "MIT"
+      ],
+      "size": 130540,
+      "installed_size": 254654,
+      "locations": [
+        {
+          "path": "/lib/apk/db/installed",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250"
+        },
+        {
+          "path": "/var/lib/db/sbom/ca-certificates-bundle-20240705-r0.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "1d308b18668c54f9ac7d4040de09feedf17a10cb",
+            "sha256": "da392082c5abe93e62ac6b557fd1dae8aedb16851c76a8b0b942235c4f24fcf2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "path": "/etc/ssl/certs/ca-certificates.crt",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "6262cc94ca9aa5867cdfd40c3e470a7bba480a45",
+            "sha256": "d40f1b9654876b5216800715c205dcf182cf2d5c363e5f16c051e08979b6be10"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/ca-certificates-bundle-20240705-r0.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "1d308b18668c54f9ac7d4040de09feedf17a10cb",
+            "sha256": "da392082c5abe93e62ac6b557fd1dae8aedb16851c76a8b0b942235c4f24fcf2"
+          }
+        }
+      ],
+      "parent": "pkg:apk/wolfi/ca-certificates@20240705-r0?distro_name=wolfi&distro_version=20230201&os_name=wolfi&os_version=rolling"
+    },
+    {
+      "type": "apk",
+      "namespace": "wolfi",
+      "name": "ca-certificates",
+      "version": "20240705-r0",
+      "purl": "pkg:apk/wolfi/ca-certificates@20240705-r0?os_name=wolfi&os_version=rolling",
+      "licenses": [
+        "MPL-2.0",
+        "MIT"
+      ],
+      "size": 130540,
+      "installed_size": 254654,
+      "locations": [
+        {
+          "path": "/lib/apk/db/installed",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250"
+        }
+      ],
+      "files": [
+        {
+          "path": "/etc/ssl/certs/ca-certificates.crt",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "6262cc94ca9aa5867cdfd40c3e470a7bba480a45",
+            "sha256": "d40f1b9654876b5216800715c205dcf182cf2d5c363e5f16c051e08979b6be10"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/ca-certificates-bundle-20240705-r0.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "1d308b18668c54f9ac7d4040de09feedf17a10cb",
+            "sha256": "da392082c5abe93e62ac6b557fd1dae8aedb16851c76a8b0b942235c4f24fcf2"
+          }
+        }
+      ]
+    },
+    {
+      "type": "apk",
+      "namespace": "wolfi",
+      "name": "gcc",
+      "version": "14.2.0-r3",
+      "purl": "pkg:apk/wolfi/gcc@14.2.0-r3?os_name=wolfi&os_version=rolling",
+      "description": "GCC runtime library",
+      "licenses": [
+        "GPL-3.0-or-later WITH GCC-exception-3.1"
+      ],
+      "size": 96089,
+      "installed_size": 227895,
+      "locations": [
+        {
+          "path": "/lib/apk/db/installed",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250"
+        }
+      ],
+      "files": [
+        {
+          "path": "/var/lib/db/sbom/libgcc-14.2.0-r3.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "0b3c1d579a80d02680c6cbbb5e9d17a915b024cf",
+            "sha256": "4f3312606385ef00007380f328f9d9087327e51b345bb69b332ec14e45227758"
+          }
+        },
+        {
+          "path": "/usr/lib/libgcc_s.so.1",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "c588646c198bf340101b41c7cc477efac967d4c8",
+            "sha256": "1a2a8e4f05c8fe0f89d94ef3cf686a373f0e892129e7aae6ee3ade68209a8e1a"
+          }
+        },
+        {
+          "path": "/usr/lib/libstdc++.so.6.0.33",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "15a142127bb9d62ee4ffe4a7b8facdd671b39805",
+            "sha256": "d4e622d69fd1185fb11955dcd992a8292b7dffeadc7c4b1ad64ad6eff55baa62"
+          }
+        },
+        {
+          "path": "/usr/lib/libstdc++.so.6.0.33-gdb.py",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "f547fb0966eb85f263ab98dacb2173e5cf2c02f9",
+            "sha256": "03f034d1fd4b1861ee23bb7ad820e67cb456a227659bb35abd48e0b642dec8e3"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/libstdc++-14.2.0-r3.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "9ace5fbe4f1813823d9c01e8b8854204d77677b4",
+            "sha256": "8a4d2105e845f1d27c01f4949be26e86db8a8358a87f1e349013f0690db787d2"
+          }
+        }
+      ]
+    },
+    {
+      "type": "apk",
+      "namespace": "wolfi",
+      "name": "glibc-locale-posix",
+      "version": "2.40-r2",
+      "purl": "pkg:apk/wolfi/glibc-locale-posix@2.40-r2?os_name=wolfi&os_version=rolling",
+      "description": "POSIX locale data for glibc",
+      "licenses": [
+        "LGPL-2.1-or-later"
+      ],
+      "size": 75730,
+      "installed_size": 408839,
+      "locations": [
+        {
+          "path": "/lib/apk/db/installed",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250"
+        },
+        {
+          "path": "/var/lib/db/sbom/glibc-locale-posix-2.40-r2.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "bb2a0494d11db37f19f22df33e5ea473a2095dbc",
+            "sha256": "5f060255b45258998e18aa732b3e2688cb13a70976659695025872cd16344e5a"
+          }
+        }
+      ],
+      "files": [
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_CTYPE",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "f25d8db8a994620f589fa70d0151ffd657d3879d",
+            "sha256": "0d78bff8131b2cd5ec4c2e66e3a67c7adef302b114b140f8fd5b3fd8f90fee02"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_IDENTIFICATION",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "1eeec3b2cb259530d76ef717e24af0fd34d94624",
+            "sha256": "38a1d8e5271c86f48910d9c684f64271955335736e71cec35eeac942f90eb091"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_MEASUREMENT",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "0a7d0d264f9ded94057020e807bfaa13a7573821",
+            "sha256": "bb14a6f2cbd5092a755e8f272079822d3e842620dd4542a8dfa1e5e72fc6115b"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_MESSAGES/SYS_LC_MESSAGES",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "574d7e92bedf1373ec9506859b0d55ee7babbf20",
+            "sha256": "f9ad02f1d8eba721d4cbd50c365b5c681c39aec008f90bfc2be2dc80bfbaddcb"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_NAME",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "b5d16f1042c3c1c4bef85766aa2c20c1b0d8cff6",
+            "sha256": "14507aad9f806112e464b9ca94c93b2e4d759ddc612b5f87922d7cac7170697d"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_NUMERIC",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "1bd2f3db04022b8cfe5cd7a7f90176f191e19425",
+            "sha256": "f5976e6b3e6b24dfe03caad6a5b98d894d8110d8bd15507e690fd60fd3e04ab2"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_ADDRESS",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "12d0e0600557e0dcb3c64e56894b81230e2eaa72",
+            "sha256": "26e2800affab801cb36d4ff9625a95c3abceeda2b6553a7aecd0cfcf34c98099"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_COLLATE",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "f245e3207984879d0b736c9aa42f4268e27221b9",
+            "sha256": "47a5f5359a8f324abc39d69a7f6241a2ac0e2fbbeae5b9c3a756e682b75d087b"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_TIME",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "e619a4db877e0b54fa14b8a3992da2b561b3239b",
+            "sha256": "0910b595d1d5d4e52cc0f415bbb1ff07c015d6860d34aae02505dd9973a63154"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/glibc-locale-posix-2.40-r2.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "bb2a0494d11db37f19f22df33e5ea473a2095dbc",
+            "sha256": "5f060255b45258998e18aa732b3e2688cb13a70976659695025872cd16344e5a"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_PAPER",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "567aaf639393135b76e22e72aaee1df95764e990",
+            "sha256": "cde048b81e2a026517cc707c906aebbd50f5ee3957b6f0c1c04699dffcb7c015"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_TELEPHONE",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "3316c99e183186c5cad97a71674ef7431c3da845",
+            "sha256": "f4caf0d12844219b65ba42edc7ec2f5ac1b2fc36a3c88c28887457275daca1ee"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_MONETARY",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "110ed47e32d65c61ab8240202faa2114d025a009",
+            "sha256": "bfd9e9975443b834582493fe9a8d7aefcd989376789c17470a1e548aee76fd55"
+          }
+        }
+      ],
+      "parent": "pkg:apk/wolfi/glibc@2.40-r2?distro_name=wolfi&distro_version=20230201&os_name=wolfi&os_version=rolling"
+    },
+    {
+      "type": "apk",
+      "namespace": "wolfi",
+      "name": "glibc",
+      "version": "2.40-r2",
+      "purl": "pkg:apk/wolfi/glibc@2.40-r2?os_name=wolfi&os_version=rolling",
+      "description": "the GNU C library",
+      "licenses": [
+        "LGPL-2.1-or-later"
+      ],
+      "size": 2822201,
+      "installed_size": 6045765,
+      "locations": [
+        {
+          "path": "/lib/apk/db/installed",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250"
+        },
+        {
+          "path": "/var/lib/db/sbom/glibc-2.40-r2.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "c54b3240a0a6af7467b99ac750c3296d259b6cf5",
+            "sha256": "9772eee2aacae67a84a467b635eaaef798c090d034aa3e6576f0b93c8dab7063"
+          }
+        }
+      ],
+      "files": [
+        {
+          "path": "/sbin/ldconfig",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "30e6fcaa55f73fa8ae73927d557d0d7a3a12cc78",
+            "sha256": "d73f3b96054f7fae12357932dd171199127fd33be150bc86b3f2b4ebfb0129c5"
+          }
+        },
+        {
+          "path": "/lib/libanl.so.1",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "be4c44bfc777427b955524485ff704cc818e13e0",
+            "sha256": "e08a632b9ab06ac755285b61bb2a585c6856af870d9b2576b85094fc859f1158"
+          }
+        },
+        {
+          "path": "/lib/libc_malloc_debug.so.0",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "b84f41c85d014ed5743ba097a48210e022fcf0d2",
+            "sha256": "cf372084b78d1b148a68ede1909ebc00083dd3922211e34c15b1a77a052f6e7b"
+          }
+        },
+        {
+          "path": "/lib/libdl.so.2",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "183aaa1a28a1ff7fc1729835b9ecb893973a9281",
+            "sha256": "1ff8fde1d17fed54e538467663ec17005303e159cd3aa3fbd918122457f3e61d"
+          }
+        },
+        {
+          "path": "/lib/libmemusage.so",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "0bf3b3ed06f9fbc78b637311cacb728571ff3687",
+            "sha256": "d8e848d2eae8fa2872294d92fdbe18ba3a9c190b3b178173056941864c161979"
+          }
+        },
+        {
+          "path": "/lib/libmvec.so.1",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "c3a5b13a98c31ffed7e74d3f999c4e9976a48c32",
+            "sha256": "6e541a9e7c35d3d858e44e7e5262902296342db6834a59550ab81f18991775c5"
+          }
+        },
+        {
+          "path": "/lib/libnss_files.so.2",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "417ebcac872cbfcbd2be3f049bbaaba3721f04ca",
+            "sha256": "fdadf13a95afa12a7b5a44e669d150b52394cf724dd1734f87d2a445b92a4fc6"
+          }
+        },
+        {
+          "path": "/lib/libthread_db.so.1",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "406c22173daa6015a053dd3bc2866976e37a9565",
+            "sha256": "f84e84c14d89803ae279ce727b128f08f7144c823173defb0dbf5e45b7793e44"
+          }
+        },
+        {
+          "path": "/etc/rpc",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "8c68c8283757db3e910865b245077387f9166a08",
+            "sha256": "3b24a975dcde688434258566813a83ce256a4c73efd7a8a9c3998327b0b4de68"
+          }
+        },
+        {
+          "path": "/lib/libnss_dns.so.2",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "2175c27f463b0160a37dfa83ee1d83709b20d1bc",
+            "sha256": "3b1ff6f547d48b11c9c5b9d951a7784f8ea4147aaa98b24739c4dd33e5d706bb"
+          }
+        },
+        {
+          "path": "/lib/ld-linux-x86-64.so.2",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "a9567380987bd885ddce1da2b0367dd031f122a1",
+            "sha256": "931fdd5d2812d5ee1aa7b55c32a269674f3ec4b4115021f9e537e8dd0e79f6c7"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/glibc-2.40-r2.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "c54b3240a0a6af7467b99ac750c3296d259b6cf5",
+            "sha256": "9772eee2aacae67a84a467b635eaaef798c090d034aa3e6576f0b93c8dab7063"
+          }
+        },
+        {
+          "path": "/lib/libBrokenLocale.so.1",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "e9bdb6dc08d3917bfe728d9a89d0e435c05eeabc",
+            "sha256": "32b60e6621a712a82fe24829f2f7cff23b57b4da44dcd8dee21a47e72613adc3"
+          }
+        },
+        {
+          "path": "/lib/libpthread.so.0",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "7ddf4e1076cd160d63ebb89ce38db0a1e5d9ea25",
+            "sha256": "2623149574e9e569ccc3c52072fe41b7e0ce46326d6a0fe08bc96050b2f9a436"
+          }
+        },
+        {
+          "path": "/lib/librt.so.1",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "982a8c49bf8e7d4f8f4f1863dbb12d9366973128",
+            "sha256": "7ee62ba00843e48214631006f0c01e65eb415d1c076c4ce576ef51ffc261f9ab"
+          }
+        },
+        {
+          "path": "/lib/libutil.so.1",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "719fcef627292b62768f798ae4b3dfd4158430c3",
+            "sha256": "dfe22447ab8f5b831487e45db3598f746ac4dffbbfc5fc6d13a2dda38b12a74f"
+          }
+        },
+        {
+          "path": "/lib/libc.so.6",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "4686b703a1ad1cca3b9a71440196392c7699494d",
+            "sha256": "f9e87e8307ca043972b79b2ca73029dd44d05f2517326c4ca133f29e5b468aea"
+          }
+        },
+        {
+          "path": "/lib/libm.so.6",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "9f79e1173c4cece0716fc1c04bdf97f87cd339ec",
+            "sha256": "074697bf8315ddb2ef9da7af965840c63296bd02b06c9ef0c3ca210a87ed0b76"
+          }
+        },
+        {
+          "path": "/lib/libnsl.so.1",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "44acc02bd1d4ba1e19ed8734562b6fe66f1e47c0",
+            "sha256": "5888c0e384e167b0b2fa72b5fbd5ce7f4d1c29d5b7d5b0d77e6cce0407e08e0d"
+          }
+        },
+        {
+          "path": "/lib/libnss_compat.so.2",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "5cf83d7f73652a0ce7329f9a82fd09ba6331806f",
+            "sha256": "88412cd29266c1f8107f1a851fcd69baa31cd7fb6b07d9449897eec8ba396618"
+          }
+        },
+        {
+          "path": "/lib/libresolv.so.2",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "19eaf3abdec14ec69946c3136c2f8ec7625f94ff",
+            "sha256": "47abf211eed7e2d36ffd66d6995d52659c3b1b5ce47a7cf4a9e4c80dea5899de"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_CTYPE",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "f25d8db8a994620f589fa70d0151ffd657d3879d",
+            "sha256": "0d78bff8131b2cd5ec4c2e66e3a67c7adef302b114b140f8fd5b3fd8f90fee02"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_IDENTIFICATION",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "1eeec3b2cb259530d76ef717e24af0fd34d94624",
+            "sha256": "38a1d8e5271c86f48910d9c684f64271955335736e71cec35eeac942f90eb091"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_MEASUREMENT",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "0a7d0d264f9ded94057020e807bfaa13a7573821",
+            "sha256": "bb14a6f2cbd5092a755e8f272079822d3e842620dd4542a8dfa1e5e72fc6115b"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_MESSAGES/SYS_LC_MESSAGES",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "574d7e92bedf1373ec9506859b0d55ee7babbf20",
+            "sha256": "f9ad02f1d8eba721d4cbd50c365b5c681c39aec008f90bfc2be2dc80bfbaddcb"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_NAME",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "b5d16f1042c3c1c4bef85766aa2c20c1b0d8cff6",
+            "sha256": "14507aad9f806112e464b9ca94c93b2e4d759ddc612b5f87922d7cac7170697d"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_NUMERIC",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "1bd2f3db04022b8cfe5cd7a7f90176f191e19425",
+            "sha256": "f5976e6b3e6b24dfe03caad6a5b98d894d8110d8bd15507e690fd60fd3e04ab2"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_ADDRESS",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "12d0e0600557e0dcb3c64e56894b81230e2eaa72",
+            "sha256": "26e2800affab801cb36d4ff9625a95c3abceeda2b6553a7aecd0cfcf34c98099"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_COLLATE",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "f245e3207984879d0b736c9aa42f4268e27221b9",
+            "sha256": "47a5f5359a8f324abc39d69a7f6241a2ac0e2fbbeae5b9c3a756e682b75d087b"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_TIME",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "e619a4db877e0b54fa14b8a3992da2b561b3239b",
+            "sha256": "0910b595d1d5d4e52cc0f415bbb1ff07c015d6860d34aae02505dd9973a63154"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/glibc-locale-posix-2.40-r2.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "bb2a0494d11db37f19f22df33e5ea473a2095dbc",
+            "sha256": "5f060255b45258998e18aa732b3e2688cb13a70976659695025872cd16344e5a"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_PAPER",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "567aaf639393135b76e22e72aaee1df95764e990",
+            "sha256": "cde048b81e2a026517cc707c906aebbd50f5ee3957b6f0c1c04699dffcb7c015"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_TELEPHONE",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "3316c99e183186c5cad97a71674ef7431c3da845",
+            "sha256": "f4caf0d12844219b65ba42edc7ec2f5ac1b2fc36a3c88c28887457275daca1ee"
+          }
+        },
+        {
+          "path": "/usr/lib/locale/C.utf8/LC_MONETARY",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "110ed47e32d65c61ab8240202faa2114d025a009",
+            "sha256": "bfd9e9975443b834582493fe9a8d7aefcd989376789c17470a1e548aee76fd55"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/ld-linux-2.40-r2.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "76cb0a46cf420706d7a3fe1a02c715135c3d99a1",
+            "sha256": "3acb8bf2fa424947fea5b769d941e3bc0382526be5617ae0365f31908b848d22"
+          }
+        },
+        {
+          "path": "/etc/ld.so.cache",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "c6b8612ee28fd89461a1ddfc8723b4cbd7fad01d",
+            "sha256": "f89a90cf271658588ddf3cf7e3c811e65055eafe68661b72e32e519d26f277e9"
+          }
+        },
+        {
+          "path": "/etc/ld.so.conf",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "d55863b9861caa7835f7a7878b648652543316dc",
+            "sha256": "4fdfcdfbc49472b5cc928d4d7ead19646ae0e1733a04c7c905ac7309b178567c"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/libcrypt1-2.40-r2.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "054225e12c6338658e5a4a3a9e12f8067ab6f1c9",
+            "sha256": "bff70f4ece986e141e5c71237c8b255570ebe333049c6c12d4fdd455f1b4c501"
+          }
+        }
+      ]
+    },
+    {
+      "type": "apk",
+      "namespace": "wolfi",
+      "name": "ld-linux",
+      "version": "2.40-r2",
+      "purl": "pkg:apk/wolfi/ld-linux@2.40-r2?os_name=wolfi&os_version=rolling",
+      "description": "the GLIBC ELF interpreter",
+      "licenses": [
+        "LGPL-2.1-or-later"
+      ],
+      "size": 127605,
+      "installed_size": 273256,
+      "locations": [
+        {
+          "path": "/lib/apk/db/installed",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250"
+        },
+        {
+          "path": "/var/lib/db/sbom/ld-linux-2.40-r2.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "76cb0a46cf420706d7a3fe1a02c715135c3d99a1",
+            "sha256": "3acb8bf2fa424947fea5b769d941e3bc0382526be5617ae0365f31908b848d22"
+          }
+        }
+      ],
+      "files": [
+        {
+          "path": "/lib/ld-linux-x86-64.so.2",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "a9567380987bd885ddce1da2b0367dd031f122a1",
+            "sha256": "931fdd5d2812d5ee1aa7b55c32a269674f3ec4b4115021f9e537e8dd0e79f6c7"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/ld-linux-2.40-r2.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "76cb0a46cf420706d7a3fe1a02c715135c3d99a1",
+            "sha256": "3acb8bf2fa424947fea5b769d941e3bc0382526be5617ae0365f31908b848d22"
+          }
+        },
+        {
+          "path": "/etc/ld.so.cache",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "c6b8612ee28fd89461a1ddfc8723b4cbd7fad01d",
+            "sha256": "f89a90cf271658588ddf3cf7e3c811e65055eafe68661b72e32e519d26f277e9"
+          }
+        },
+        {
+          "path": "/etc/ld.so.conf",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "d55863b9861caa7835f7a7878b648652543316dc",
+            "sha256": "4fdfcdfbc49472b5cc928d4d7ead19646ae0e1733a04c7c905ac7309b178567c"
+          }
+        }
+      ],
+      "parent": "pkg:apk/wolfi/glibc@2.40-r2?distro_name=wolfi&distro_version=20230201&os_name=wolfi&os_version=rolling"
+    },
+    {
+      "type": "apk",
+      "namespace": "wolfi",
+      "name": "libcrypt1",
+      "version": "2.40-r2",
+      "purl": "pkg:apk/wolfi/libcrypt1@2.40-r2?os_name=wolfi&os_version=rolling",
+      "description": "Password hashing library included with glibc",
+      "licenses": [
+        "LGPL-2.1-or-later"
+      ],
+      "size": 2148,
+      "installed_size": 22169,
+      "locations": [
+        {
+          "path": "/lib/apk/db/installed",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250"
+        },
+        {
+          "path": "/var/lib/db/sbom/libcrypt1-2.40-r2.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "054225e12c6338658e5a4a3a9e12f8067ab6f1c9",
+            "sha256": "bff70f4ece986e141e5c71237c8b255570ebe333049c6c12d4fdd455f1b4c501"
+          }
+        }
+      ],
+      "files": [
+        {
+          "path": "/var/lib/db/sbom/libcrypt1-2.40-r2.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "054225e12c6338658e5a4a3a9e12f8067ab6f1c9",
+            "sha256": "bff70f4ece986e141e5c71237c8b255570ebe333049c6c12d4fdd455f1b4c501"
+          }
+        }
+      ],
+      "parent": "pkg:apk/wolfi/glibc@2.40-r2?distro_name=wolfi&distro_version=20230201&os_name=wolfi&os_version=rolling"
+    },
+    {
+      "type": "apk",
+      "namespace": "wolfi",
+      "name": "libcrypto3",
+      "version": "3.3.2-r0",
+      "purl": "pkg:apk/wolfi/libcrypto3@3.3.2-r0?os_name=wolfi&os_version=rolling",
+      "description": "OpenSSL libcrypto library",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "size": 2305030,
+      "installed_size": 6093310,
+      "locations": [
+        {
+          "path": "/lib/apk/db/installed",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250"
+        },
+        {
+          "path": "/var/lib/db/sbom/libcrypto3-3.3.2-r0.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "86e5a4c32126f8d12d71db218457d62da9875355",
+            "sha256": "ea73cac929b56f4c93f4ad9e0c8d31e02431f79d83fed645f5c6dd6827176928"
+          }
+        }
+      ],
+      "files": [
+        {
+          "path": "/usr/lib/libcrypto.so.3",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "b3a5c92bbd917bd214fbfb38a0ccdf0c849492ed",
+            "sha256": "e8e1f70d4e56463a0571e1a4d343583dedb34ed9211294623e1e47743b3cf2ca"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/libcrypto3-3.3.2-r0.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "86e5a4c32126f8d12d71db218457d62da9875355",
+            "sha256": "ea73cac929b56f4c93f4ad9e0c8d31e02431f79d83fed645f5c6dd6827176928"
+          }
+        }
+      ],
+      "parent": "pkg:apk/wolfi/openssl@3.3.2-r0?distro_name=wolfi&distro_version=20230201&os_name=wolfi&os_version=rolling"
+    },
+    {
+      "type": "apk",
+      "namespace": "wolfi",
+      "name": "libgcc",
+      "version": "14.2.0-r3",
+      "purl": "pkg:apk/wolfi/libgcc@14.2.0-r3?os_name=wolfi&os_version=rolling",
+      "description": "GCC runtime library",
+      "licenses": [
+        "GPL-3.0-or-later WITH GCC-exception-3.1"
+      ],
+      "size": 96089,
+      "installed_size": 227895,
+      "locations": [
+        {
+          "path": "/lib/apk/db/installed",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250"
+        },
+        {
+          "path": "/var/lib/db/sbom/libgcc-14.2.0-r3.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "0b3c1d579a80d02680c6cbbb5e9d17a915b024cf",
+            "sha256": "4f3312606385ef00007380f328f9d9087327e51b345bb69b332ec14e45227758"
+          }
+        }
+      ],
+      "files": [
+        {
+          "path": "/var/lib/db/sbom/libgcc-14.2.0-r3.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "0b3c1d579a80d02680c6cbbb5e9d17a915b024cf",
+            "sha256": "4f3312606385ef00007380f328f9d9087327e51b345bb69b332ec14e45227758"
+          }
+        },
+        {
+          "path": "/usr/lib/libgcc_s.so.1",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "c588646c198bf340101b41c7cc477efac967d4c8",
+            "sha256": "1a2a8e4f05c8fe0f89d94ef3cf686a373f0e892129e7aae6ee3ade68209a8e1a"
+          }
+        }
+      ],
+      "parent": "pkg:apk/wolfi/gcc@14.2.0-r3?distro_name=wolfi&distro_version=20230201&os_name=wolfi&os_version=rolling"
+    },
+    {
+      "type": "apk",
+      "namespace": "wolfi",
+      "name": "libssl3",
+      "version": "3.3.2-r0",
+      "purl": "pkg:apk/wolfi/libssl3@3.3.2-r0?os_name=wolfi&os_version=rolling",
+      "description": "OpenSSL libssl library",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "size": 509819,
+      "installed_size": 1261919,
+      "locations": [
+        {
+          "path": "/lib/apk/db/installed",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250"
+        },
+        {
+          "path": "/var/lib/db/sbom/libssl3-3.3.2-r0.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "dc3fbe57da7ae2c9d04b3c9d1864c3c5a252cb6d",
+            "sha256": "34ec7ad4223a5612c042dede942775688936b9f503f942315fa8d5b0cf6b381b"
+          }
+        }
+      ],
+      "files": [
+        {
+          "path": "/var/lib/db/sbom/libssl3-3.3.2-r0.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "dc3fbe57da7ae2c9d04b3c9d1864c3c5a252cb6d",
+            "sha256": "34ec7ad4223a5612c042dede942775688936b9f503f942315fa8d5b0cf6b381b"
+          }
+        },
+        {
+          "path": "/usr/lib/libssl.so.3",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "2fba94022ea46893ae5fdecb98b1e1c9a0f1bf5b",
+            "sha256": "5f9d7a25008f4d00c2608bebce826ea7237916e5a018f21f9d8d329f428e9dad"
+          }
+        }
+      ],
+      "parent": "pkg:apk/wolfi/openssl@3.3.2-r0?distro_name=wolfi&distro_version=20230201&os_name=wolfi&os_version=rolling"
+    },
+    {
+      "type": "apk",
+      "namespace": "wolfi",
+      "name": "libstdc++",
+      "version": "14.2.0-r3",
+      "purl": "pkg:apk/wolfi/libstdc%2B%2B@14.2.0-r3?os_name=wolfi&os_version=rolling",
+      "licenses": [
+        "GPL-3.0-or-later WITH GCC-exception-3.1"
+      ],
+      "size": 1087043,
+      "installed_size": 3238011,
+      "locations": [
+        {
+          "path": "/lib/apk/db/installed",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250"
+        },
+        {
+          "path": "/var/lib/db/sbom/libstdc++-14.2.0-r3.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "9ace5fbe4f1813823d9c01e8b8854204d77677b4",
+            "sha256": "8a4d2105e845f1d27c01f4949be26e86db8a8358a87f1e349013f0690db787d2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "path": "/usr/lib/libstdc++.so.6.0.33",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "15a142127bb9d62ee4ffe4a7b8facdd671b39805",
+            "sha256": "d4e622d69fd1185fb11955dcd992a8292b7dffeadc7c4b1ad64ad6eff55baa62"
+          }
+        },
+        {
+          "path": "/usr/lib/libstdc++.so.6.0.33-gdb.py",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "f547fb0966eb85f263ab98dacb2173e5cf2c02f9",
+            "sha256": "03f034d1fd4b1861ee23bb7ad820e67cb456a227659bb35abd48e0b642dec8e3"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/libstdc++-14.2.0-r3.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "9ace5fbe4f1813823d9c01e8b8854204d77677b4",
+            "sha256": "8a4d2105e845f1d27c01f4949be26e86db8a8358a87f1e349013f0690db787d2"
+          }
+        }
+      ],
+      "parent": "pkg:apk/wolfi/gcc@14.2.0-r3?distro_name=wolfi&distro_version=20230201&os_name=wolfi&os_version=rolling"
+    },
+    {
+      "type": "apk",
+      "namespace": "wolfi",
+      "name": "libxcrypt",
+      "version": "4.4.36-r7",
+      "purl": "pkg:apk/wolfi/libxcrypt@4.4.36-r7?os_name=wolfi&os_version=rolling",
+      "description": "Modern library for one-way hashing of passwords",
+      "licenses": [
+        "GPL-2.0-or-later",
+        "LGPL-2.1-or-later"
+      ],
+      "size": 84766,
+      "installed_size": 234546,
+      "locations": [
+        {
+          "path": "/lib/apk/db/installed",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250"
+        },
+        {
+          "path": "/var/lib/db/sbom/libxcrypt-4.4.36-r7.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "7dc32cf412e30ab6038e6d867dd9ec36063cac07",
+            "sha256": "4a04a514ecc52d95fb77f11a1cfe9111d623bd05d9fb8cd1c30ac183b7867b44"
+          }
+        }
+      ],
+      "files": [
+        {
+          "path": "/usr/lib/libcrypt.so.1.1.0",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "985ee9dbe2021dfa1ca6b4e4dd3d1953a03381f0",
+            "sha256": "21fddf4a5aa0d3363a1bf95cf9bf7eb45cb94e0e20ed2608cbf6f65231a624ec"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/libxcrypt-4.4.36-r7.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "7dc32cf412e30ab6038e6d867dd9ec36063cac07",
+            "sha256": "4a04a514ecc52d95fb77f11a1cfe9111d623bd05d9fb8cd1c30ac183b7867b44"
+          }
+        }
+      ]
+    },
+    {
+      "type": "apk",
+      "namespace": "wolfi",
+      "name": "nginx-mainline-config",
+      "version": "1.27.1-r0",
+      "purl": "pkg:apk/wolfi/nginx-mainline-config@1.27.1-r0?os_name=wolfi&os_version=rolling",
+      "description": "Creates nginx config step that can then be overridden by users",
+      "licenses": [
+        "BSD-2-Clause"
+      ],
+      "size": 8924,
+      "installed_size": 61931,
+      "locations": [
+        {
+          "path": "/lib/apk/db/installed",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250"
+        },
+        {
+          "path": "/var/lib/db/sbom/nginx-mainline-config-1.27.1-r0.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "3bf46a8c4b1bfe4468e4dc99bee55652c878bc93",
+            "sha256": "c575fda91086bc5c53783c5beef14c04601502f445bdb55e5bb9982cf9b63b70"
+          }
+        }
+      ],
+      "files": [
+        {
+          "path": "/etc/nginx/nginx.conf.default",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "d548a69f9775dd7bfe752b7ed9a43b6a2413eda9",
+            "sha256": "95363d79620c1b3eb6951711b6630a411f147bc9197bc91442c0605cf6688e46"
+          }
+        },
+        {
+          "path": "/etc/nginx/scgi_params.default",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "379c1e2a2a5ffb8c91a07328d4c9be2bc58799fd",
+            "sha256": "f27b2027c571ccafcfb0fbb3f54d7aeee11a984e3a0f5a1fdf14629030fc9011"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/nginx-mainline-config-1.27.1-r0.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "3bf46a8c4b1bfe4468e4dc99bee55652c878bc93",
+            "sha256": "c575fda91086bc5c53783c5beef14c04601502f445bdb55e5bb9982cf9b63b70"
+          }
+        },
+        {
+          "path": "/etc/nginx/fastcgi.conf",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "cbf596ddb3433a8e0d325f3c188bec9c1bb746b3",
+            "sha256": "b2c3d480a58f61f3a7dc61850b461e892e36f236317765a4f2f6d558c928fa57"
+          }
+        },
+        {
+          "path": "/etc/nginx/mime.types.default",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "9b85e5091018455091d7f135c4a160ad9487516a",
+            "sha256": "6f95d1d7d75e3c072907d845622a69d23110d1266c16ff122b3109b8b21f3ae9"
+          }
+        },
+        {
+          "path": "/etc/nginx/uwsgi_params",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "cc2fcdb4605dcac23d59f667889ccbdfdc6e3668",
+            "sha256": "015cb581c2eb84b1a1ac9b575521d5881f791f632bfa62f34b26ba97d70c0d4f"
+          }
+        },
+        {
+          "path": "/etc/nginx/fastcgi_params",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "da38e2a0dded838afbe0eade6cb837ac30fd8046",
+            "sha256": "f37852d0113de30fa6bfc3d9b180ef99383c06739530dd482a8538503afd5a58"
+          }
+        },
+        {
+          "path": "/etc/nginx/fastcgi_params.default",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "da38e2a0dded838afbe0eade6cb837ac30fd8046",
+            "sha256": "f37852d0113de30fa6bfc3d9b180ef99383c06739530dd482a8538503afd5a58"
+          }
+        },
+        {
+          "path": "/etc/nginx/koi-utf",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "407cb51b397ba4ad90a2246640a81af18e2e917a",
+            "sha256": "b5f8a6d411db5e5d11d151d50cd1e962444732593adec0e1ef0a8c6eebec63ee"
+          }
+        },
+        {
+          "path": "/etc/nginx/koi-win",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "19ec7fb71e7f00d7e8a1cfc1013490f0cfee572b",
+            "sha256": "de518a9eafe86c8bc705e296d0ef26135835b46bdc0de01d1d50a630fa5d341e"
+          }
+        },
+        {
+          "path": "/etc/nginx/fastcgi.conf.default",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "cbf596ddb3433a8e0d325f3c188bec9c1bb746b3",
+            "sha256": "b2c3d480a58f61f3a7dc61850b461e892e36f236317765a4f2f6d558c928fa57"
+          }
+        },
+        {
+          "path": "/etc/nginx/scgi_params",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "379c1e2a2a5ffb8c91a07328d4c9be2bc58799fd",
+            "sha256": "f27b2027c571ccafcfb0fbb3f54d7aeee11a984e3a0f5a1fdf14629030fc9011"
+          }
+        },
+        {
+          "path": "/etc/nginx/uwsgi_params.default",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "cc2fcdb4605dcac23d59f667889ccbdfdc6e3668",
+            "sha256": "015cb581c2eb84b1a1ac9b575521d5881f791f632bfa62f34b26ba97d70c0d4f"
+          }
+        },
+        {
+          "path": "/etc/nginx/win-utf",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "e10f2d42c9e581901d810928d01a3bf8f3372838",
+            "sha256": "55adf050bad0cb60cbfe18649f8f17cd405fece0cc65eb78dac72c74c9dad944"
+          }
+        },
+        {
+          "path": "/etc/nginx/mime.types",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "9b85e5091018455091d7f135c4a160ad9487516a",
+            "sha256": "6f95d1d7d75e3c072907d845622a69d23110d1266c16ff122b3109b8b21f3ae9"
+          }
+        }
+      ],
+      "parent": "pkg:apk/wolfi/nginx-mainline@1.27.1-r0?distro_name=wolfi&distro_version=20230201&os_name=wolfi&os_version=rolling"
+    },
+    {
+      "type": "apk",
+      "namespace": "wolfi",
+      "name": "nginx-mainline-package-config",
+      "version": "1.27.1-r0",
+      "purl": "pkg:apk/wolfi/nginx-mainline-package-config@1.27.1-r0?os_name=wolfi&os_version=rolling",
+      "description": "Config supplied in packaged nginx.org bundles at https://hg.nginx.org/pkg-oss/",
+      "licenses": [
+        "BSD-2-Clause"
+      ],
+      "size": 3591,
+      "installed_size": 65272,
+      "locations": [
+        {
+          "path": "/lib/apk/db/installed",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250"
+        },
+        {
+          "path": "/var/lib/db/sbom/nginx-mainline-package-config-1.27.1-r0.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "2fb964f4ccdd0fabfac1b6d05d58d1aae07d58a5",
+            "sha256": "4ab2ccdcd999bb2fcf79b035969f4b6ca7473cd6a3fd27e53c2faacdc627079c"
+          }
+        }
+      ],
+      "files": [
+        {
+          "path": "/var/lib/db/sbom/nginx-mainline-package-config-1.27.1-r0.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "2fb964f4ccdd0fabfac1b6d05d58d1aae07d58a5",
+            "sha256": "4ab2ccdcd999bb2fcf79b035969f4b6ca7473cd6a3fd27e53c2faacdc627079c"
+          }
+        },
+        {
+          "path": "/etc/nginx/conf.d/nginx.default.conf",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "196d8e4dcdbdb90f8565a6516e3f46d6c6201257",
+            "sha256": "134c54b6ae8dfc402c9c2526008a9071944508e8c2d22c4836ded01cb1325a9f"
+          }
+        },
+        {
+          "path": "/etc/nginx/nginx.conf",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "f4a4071e8b77654b62260f42a6d8be778421c5ef",
+            "sha256": "496b6d36a876bd06dd66c1267ac1caee873289e8dd828d137c09890417fbf6d0"
+          }
+        },
+        {
+          "path": "/var/lib/nginx/html/50x.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "835b9dec419c01420e78602527a9fba8c463521c",
+            "sha256": "876766b4e80133fd490603e073d3567425b88794828a9292104244c9e40875ed"
+          }
+        },
+        {
+          "path": "/usr/share/nginx/html/index.html",
+          "ordinal": 1,
+          "digest": "sha256:be325722171b80550b2e6e81c1f5833b757d5231615f6cc7058a244566301a0a",
+          "diff_id": "sha256:a2e1b77a56a25d35cff67061683c7ebb197f28ee030d1eda3f2cd8b2f234c687",
+          "file_digests": {
+            "sha1": "bb3863080d96fd43f797140aa0418b051788c547",
+            "sha256": "d1b2b9603665eacf6afcf6d7c18f95835cc8b397c71f6677203764644c966039"
+          }
+        }
+      ],
+      "parent": "pkg:apk/wolfi/nginx-mainline@1.27.1-r0?distro_name=wolfi&distro_version=20230201&os_name=wolfi&os_version=rolling"
+    },
+    {
+      "type": "apk",
+      "namespace": "wolfi",
+      "name": "nginx-mainline",
+      "version": "1.27.1-r0",
+      "purl": "pkg:apk/wolfi/nginx-mainline@1.27.1-r0?os_name=wolfi&os_version=rolling",
+      "description": "HTTP and reverse proxy server (mainline version)",
+      "licenses": [
+        "BSD-2-Clause"
+      ],
+      "size": 567504,
+      "installed_size": 1344308,
+      "locations": [
+        {
+          "path": "/lib/apk/db/installed",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250"
+        },
+        {
+          "path": "/var/lib/db/sbom/nginx-mainline-1.27.1-r0.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "e6c75a76bf98f97552b278a7cc08af6ce2302310",
+            "sha256": "c10df29f673806923ed50dd554fe919d3e1d625ebb20951f5860e95e2646f826"
+          }
+        }
+      ],
+      "files": [
+        {
+          "path": "/var/lib/db/sbom/nginx-mainline-1.27.1-r0.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "e6c75a76bf98f97552b278a7cc08af6ce2302310",
+            "sha256": "c10df29f673806923ed50dd554fe919d3e1d625ebb20951f5860e95e2646f826"
+          }
+        },
+        {
+          "path": "/var/lib/nginx/html/50x.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "835b9dec419c01420e78602527a9fba8c463521c",
+            "sha256": "876766b4e80133fd490603e073d3567425b88794828a9292104244c9e40875ed"
+          }
+        },
+        {
+          "path": "/var/lib/nginx/html/index.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "c51a3f0e6de4eb802d5630941c3fd9e1d0efae4b",
+            "sha256": "fb47468a2cd3953c7131431991afcc6a2703f14640520102eea0a685a7e8d6de"
+          }
+        },
+        {
+          "path": "/usr/sbin/nginx",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "6c2b86f66646de918b579f9868101b7819bce1e5",
+            "sha256": "ef8fda55df554303b65da8b07e1dde210b79f2b511924189fefa994da21f593e"
+          }
+        },
+        {
+          "path": "/etc/nginx/nginx.conf.default",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "d548a69f9775dd7bfe752b7ed9a43b6a2413eda9",
+            "sha256": "95363d79620c1b3eb6951711b6630a411f147bc9197bc91442c0605cf6688e46"
+          }
+        },
+        {
+          "path": "/etc/nginx/scgi_params.default",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "379c1e2a2a5ffb8c91a07328d4c9be2bc58799fd",
+            "sha256": "f27b2027c571ccafcfb0fbb3f54d7aeee11a984e3a0f5a1fdf14629030fc9011"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/nginx-mainline-config-1.27.1-r0.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "3bf46a8c4b1bfe4468e4dc99bee55652c878bc93",
+            "sha256": "c575fda91086bc5c53783c5beef14c04601502f445bdb55e5bb9982cf9b63b70"
+          }
+        },
+        {
+          "path": "/etc/nginx/fastcgi.conf",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "cbf596ddb3433a8e0d325f3c188bec9c1bb746b3",
+            "sha256": "b2c3d480a58f61f3a7dc61850b461e892e36f236317765a4f2f6d558c928fa57"
+          }
+        },
+        {
+          "path": "/etc/nginx/mime.types.default",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "9b85e5091018455091d7f135c4a160ad9487516a",
+            "sha256": "6f95d1d7d75e3c072907d845622a69d23110d1266c16ff122b3109b8b21f3ae9"
+          }
+        },
+        {
+          "path": "/etc/nginx/uwsgi_params",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "cc2fcdb4605dcac23d59f667889ccbdfdc6e3668",
+            "sha256": "015cb581c2eb84b1a1ac9b575521d5881f791f632bfa62f34b26ba97d70c0d4f"
+          }
+        },
+        {
+          "path": "/etc/nginx/fastcgi_params",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "da38e2a0dded838afbe0eade6cb837ac30fd8046",
+            "sha256": "f37852d0113de30fa6bfc3d9b180ef99383c06739530dd482a8538503afd5a58"
+          }
+        },
+        {
+          "path": "/etc/nginx/fastcgi_params.default",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "da38e2a0dded838afbe0eade6cb837ac30fd8046",
+            "sha256": "f37852d0113de30fa6bfc3d9b180ef99383c06739530dd482a8538503afd5a58"
+          }
+        },
+        {
+          "path": "/etc/nginx/koi-utf",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "407cb51b397ba4ad90a2246640a81af18e2e917a",
+            "sha256": "b5f8a6d411db5e5d11d151d50cd1e962444732593adec0e1ef0a8c6eebec63ee"
+          }
+        },
+        {
+          "path": "/etc/nginx/koi-win",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "19ec7fb71e7f00d7e8a1cfc1013490f0cfee572b",
+            "sha256": "de518a9eafe86c8bc705e296d0ef26135835b46bdc0de01d1d50a630fa5d341e"
+          }
+        },
+        {
+          "path": "/etc/nginx/fastcgi.conf.default",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "cbf596ddb3433a8e0d325f3c188bec9c1bb746b3",
+            "sha256": "b2c3d480a58f61f3a7dc61850b461e892e36f236317765a4f2f6d558c928fa57"
+          }
+        },
+        {
+          "path": "/etc/nginx/scgi_params",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "379c1e2a2a5ffb8c91a07328d4c9be2bc58799fd",
+            "sha256": "f27b2027c571ccafcfb0fbb3f54d7aeee11a984e3a0f5a1fdf14629030fc9011"
+          }
+        },
+        {
+          "path": "/etc/nginx/uwsgi_params.default",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "cc2fcdb4605dcac23d59f667889ccbdfdc6e3668",
+            "sha256": "015cb581c2eb84b1a1ac9b575521d5881f791f632bfa62f34b26ba97d70c0d4f"
+          }
+        },
+        {
+          "path": "/etc/nginx/win-utf",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "e10f2d42c9e581901d810928d01a3bf8f3372838",
+            "sha256": "55adf050bad0cb60cbfe18649f8f17cd405fece0cc65eb78dac72c74c9dad944"
+          }
+        },
+        {
+          "path": "/etc/nginx/mime.types",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "9b85e5091018455091d7f135c4a160ad9487516a",
+            "sha256": "6f95d1d7d75e3c072907d845622a69d23110d1266c16ff122b3109b8b21f3ae9"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/nginx-mainline-package-config-1.27.1-r0.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "2fb964f4ccdd0fabfac1b6d05d58d1aae07d58a5",
+            "sha256": "4ab2ccdcd999bb2fcf79b035969f4b6ca7473cd6a3fd27e53c2faacdc627079c"
+          }
+        },
+        {
+          "path": "/etc/nginx/conf.d/nginx.default.conf",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "196d8e4dcdbdb90f8565a6516e3f46d6c6201257",
+            "sha256": "134c54b6ae8dfc402c9c2526008a9071944508e8c2d22c4836ded01cb1325a9f"
+          }
+        },
+        {
+          "path": "/etc/nginx/nginx.conf",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "f4a4071e8b77654b62260f42a6d8be778421c5ef",
+            "sha256": "496b6d36a876bd06dd66c1267ac1caee873289e8dd828d137c09890417fbf6d0"
+          }
+        },
+        {
+          "path": "/usr/share/nginx/html/index.html",
+          "ordinal": 1,
+          "digest": "sha256:be325722171b80550b2e6e81c1f5833b757d5231615f6cc7058a244566301a0a",
+          "diff_id": "sha256:a2e1b77a56a25d35cff67061683c7ebb197f28ee030d1eda3f2cd8b2f234c687",
+          "file_digests": {
+            "sha1": "bb3863080d96fd43f797140aa0418b051788c547",
+            "sha256": "d1b2b9603665eacf6afcf6d7c18f95835cc8b397c71f6677203764644c966039"
+          }
+        }
+      ]
+    },
+    {
+      "type": "apk",
+      "namespace": "wolfi",
+      "name": "openssl",
+      "version": "3.3.2-r0",
+      "purl": "pkg:apk/wolfi/openssl@3.3.2-r0?os_name=wolfi&os_version=rolling",
+      "description": "OpenSSL libcrypto library",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "size": 2305030,
+      "installed_size": 6093310,
+      "locations": [
+        {
+          "path": "/lib/apk/db/installed",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250"
+        }
+      ],
+      "files": [
+        {
+          "path": "/usr/lib/libcrypto.so.3",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "b3a5c92bbd917bd214fbfb38a0ccdf0c849492ed",
+            "sha256": "e8e1f70d4e56463a0571e1a4d343583dedb34ed9211294623e1e47743b3cf2ca"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/libcrypto3-3.3.2-r0.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "86e5a4c32126f8d12d71db218457d62da9875355",
+            "sha256": "ea73cac929b56f4c93f4ad9e0c8d31e02431f79d83fed645f5c6dd6827176928"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/libssl3-3.3.2-r0.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "dc3fbe57da7ae2c9d04b3c9d1864c3c5a252cb6d",
+            "sha256": "34ec7ad4223a5612c042dede942775688936b9f503f942315fa8d5b0cf6b381b"
+          }
+        },
+        {
+          "path": "/usr/lib/libssl.so.3",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "2fba94022ea46893ae5fdecb98b1e1c9a0f1bf5b",
+            "sha256": "5f9d7a25008f4d00c2608bebce826ea7237916e5a018f21f9d8d329f428e9dad"
+          }
+        }
+      ]
+    },
+    {
+      "type": "apk",
+      "namespace": "wolfi",
+      "name": "pcre",
+      "version": "8.45-r3",
+      "purl": "pkg:apk/wolfi/pcre@8.45-r3?os_name=wolfi&os_version=rolling",
+      "description": "Perl-compatible regular expression library",
+      "licenses": [
+        "BSD-3-Clause"
+      ],
+      "size": 1236198,
+      "installed_size": 3487050,
+      "locations": [
+        {
+          "path": "/lib/apk/db/installed",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250"
+        },
+        {
+          "path": "/var/lib/db/sbom/pcre-8.45-r3.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "938270665546599c3c7c0cd8c2408d837cdff40c",
+            "sha256": "6c159a124448ef439671b923d86faabec819467abc3ae9de244a76d699c99895"
+          }
+        }
+      ],
+      "files": [
+        {
+          "path": "/usr/share/doc/pcre/html/pcrebuild.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "64e45ae09e2e94eb8c1715547262e9de2706d56b",
+            "sha256": "27ca87062537a0e9259973d048d2582f3e3dd68ec7552440f68bfa41b6d0738a"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/pcregrep.txt",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "ebd72b00f625ec154005054657ab240e21baccb7",
+            "sha256": "318c680edf31d43d7dd0fe9928a6a37ffd11c3a397fd45f4807d890e7d723c60"
+          }
+        },
+        {
+          "path": "/usr/lib/libpcre.so.1.2.13",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "15e11d7b77c9af32f5ba9802688a9081cb68ce21",
+            "sha256": "8772eac98e6d2e90093b94e7d27fc6db724816f1842f2b4fa82360575e4d5d65"
+          }
+        },
+        {
+          "path": "/usr/lib/libpcre16.so.0.2.13",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "c964ef5f22c1a2dce52f998cb893cacac1f1ab35",
+            "sha256": "efbd41ef9a59dbeb6bef07c96df5d3c99037d1816910216d7f7ce3bd22783292"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/NEWS",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "77eb36d8879fb1694f1eea01f6eecae0e2681ab5",
+            "sha256": "59e2c58880dbf6681e96c99c19452d69cb29b8bc6884fa768494622eb56c9a52"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_copy_named_substring.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "63372156d4f5c4d7d34082a34faec8ee5e7ae2c4",
+            "sha256": "22eaa88e6472522c88f9eee619a0a0d4e8bd4e1535a1026041cfa5ed0a7fcea2"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcrepartial.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "a66f5648e472706f4603f7e1c58b63526f194354",
+            "sha256": "ffef90c566c5f4ec2238ca69529f4a7dd9e68d9219a3c653e83d5da32380ab34"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcreprecompile.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "a9f39e449f0a53c93608570f15a0617095fd18db",
+            "sha256": "5beb7314ba12fd534f67eb38d363c1740426559bda24d143b9b4283b53d85da3"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/pcretest.txt",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "64390f783b14995674f60488733971ca40abdd48",
+            "sha256": "1172026919ed731a58d8c3033b8ac086929e310fd2f0f83bde959c0258c3be04"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/pcre-8.45-r3.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "938270665546599c3c7c0cd8c2408d837cdff40c",
+            "sha256": "6c159a124448ef439671b923d86faabec819467abc3ae9de244a76d699c99895"
+          }
+        },
+        {
+          "path": "/usr/lib/libpcre32.so.0.0.13",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "40c686c067d527f364940758650c1f0e4fd338ad",
+            "sha256": "6fcb6c73031dcbfec6143ebdbef0cf2d4b9ab01033ac1793919f26b368b9e3ad"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/index.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "5e665a85839b3c7ec0aa95284ad5d752a56943b1",
+            "sha256": "a9941170673b9d59f007f7f1e7a313fa12e2001054b653e697043718e27f8b5e"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_get_stringnumber.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "a1149837409906564064bc39f3b546840a7c16a0",
+            "sha256": "058cef975e594a2c1379bb316b18916d3be14b5a590e268b3b8503ebf4d5a7ae"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_utf16_to_host_byte_order.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "6fb9a0d01e502802e4aac0f788eb15f2cab2a052",
+            "sha256": "d4a19bba244b82fe518ac61ffbcd7c15875c851a6a78edbc1fccaf1aad02e328"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcrejit.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "4bb4ce874de8b52dbbd17e15adfb68e7157b4a1d",
+            "sha256": "3416072061a1ccf8e2331ad11cbfb1c67030fe6f9af31e3290460a0395326064"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcreunicode.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "e82ce32b7af4ff9f498eabeba29b6393685c6234",
+            "sha256": "5490e93a21c250099cb45820e3c617573efd70689332664f02f1cc9de839ccea"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/pcre.txt",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "48f687d4f0ef29dcdb81da19c1f49ee176917a48",
+            "sha256": "dd7e19446e7b6f9823e8adf24f3b53c201407cca41d122e579162c2f7066deb0"
+          }
+        },
+        {
+          "path": "/usr/bin/pcretest",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "902fc4905a656e45b1eb6ed9c4496a665e84eee7",
+            "sha256": "1790cd43979180db56a67bba10f5c9a9bd2ad15e513738bec5b2cf4c0c91b140"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/ChangeLog",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "fa4bb3f855dbacac3f8486e13f2635d5a2d32ee4",
+            "sha256": "c7b1cb5e9d3122d552b5bd34439e441fb797bd294d6a95de7aec79dbac38dc9e"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_config.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "9bc89874a2288e160700a4c70a25ea382d9fc206",
+            "sha256": "71647b6d007dea79cc40205f9cf485dabed5e2eb43c509ca39390faf797f006a"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_pattern_to_host_byte_order.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "5aa0b2268c79b0302a50af1236b46d428f8ce29d",
+            "sha256": "be9188eb308c8491a5ee7b1c7f53632b5b9459682171b6d903c57ba6822ef684"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_get_named_substring.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "07e243b3a507014a63a410a510d704add96dd773",
+            "sha256": "02c6688c100e2901a3c1762708e162a0bbbca6760c6bf3a37460f1d7cc18579e"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_jit_stack_alloc.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "a508bf1b2539ab00e35b5135b095fd6714e3b2d0",
+            "sha256": "0a4cb6fd44431a608a9f767fe537e5a2899dff0187f18f9e0ba9873cf5bb09ad"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre16.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "bd3b18e633d8bd719879e0855badfa103c8f29a2",
+            "sha256": "4424a27195c4be03780375d03888f8665de37aa5abbdc0a40a1ceee722a13bb5"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_copy_substring.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "8bb442b0b57b0701007f8fbfe5aa03f0855cd620",
+            "sha256": "148a4bcbc4c5c7fd3d164b483273f270767118481a01d088206a98d7c836c8f3"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_maketables.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "f3d1984438a1df5c80968521ae13e73584ecde2d",
+            "sha256": "e406c945fc3b76a7d259e06483f58df1a401c00f516aa737b7cd19152c8f552e"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcrecpp.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "3e33cbc76a63d95987bea5832e364cce6120cc90",
+            "sha256": "87b967d907fb8a88c60e94359013d89a1204cca04e735030b11beee2e69cba5e"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_jit_stack_free.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "1c6c838f5f1d472738bbe3761acc21a1a9b4fa82",
+            "sha256": "87ffc0f24a1532c003f0d903a0004151836796826474bc5e9890b317d31b9d9e"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcrecompat.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "eac7ee65313d978f6e301b678a334830227c0f78",
+            "sha256": "2d897fd66f336165d407b9dcbbe9c35f19d732b39267f637ded5585fac95c9c4"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcregrep.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "503b454891cc2ac3c74ac76ca8e5d28d4faea454",
+            "sha256": "d93c93ebab667437d23ea6678124f73297dc6eea22a256642a4c1315891995f1"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcresyntax.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "f952530aa5655f4445bf18a69edea5d5368263a0",
+            "sha256": "17b829a7d19bd7b9519f63e2df7ce3ba676375922f05ddbda5149ee988d11aaf"
+          }
+        },
+        {
+          "path": "/usr/lib/libpcrecpp.so.0.0.2",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "b957db9c615a0d25c50075da69200f4e3c507edf",
+            "sha256": "9d0d3d97a5598ab9f9f4925291370a306ec007035fb441ed95f3d4971642fe43"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/COPYING",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "495a1e12b07adcc0ff0eb6fad218539bb9fc805d",
+            "sha256": "17abe1dbb92b21ab173cf9757dd57b0b15cd8d863b2ccdef635fdbef03077fb0"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_fullinfo.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "d05729ba7b4c72f11b7396777ee4d2701424516b",
+            "sha256": "b1acdc0b83f9e30b83a2dab6da97fe14a83369b306f2935b4bfe07e9a875585e"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_get_substring_list.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "458e588ba666f4b409611dfaa6fc50008037e560",
+            "sha256": "53f52712e894b0e7612df4ada5140d5730f3fdcca1b2c9c6049eed21714e6c4e"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre-config.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "49c9f8ad28da39d2ac72e176ca138a8b000d6a61",
+            "sha256": "94a9a5f654d94c66c6ee29e57ebadba2b2ccfd8801d9a4f76d9953732c4c3fa3"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_utf32_to_host_byte_order.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "95334653ea3eefcb95e8ad9ffb1930a723beff95",
+            "sha256": "3fb6d536232e8ce0c0c738357a9a1af867d73b8fab1f752ed6d7b0edf056d6b7"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/pcre-config.txt",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "9bbac0654bcd49cc5cb29cee3d17c09406774584",
+            "sha256": "d96fb6ac7f10a811e212a30298bc07e66f8b2bcea14c7303350105b035c77c4c"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcreperform.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "7f833e4e5f28f90358febfde079d1dc81411d461",
+            "sha256": "d3eea74fc04a20f31c0b8447ca4d4b0e751bba990a8711212a466cfb4363dad6"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/README.txt",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "44fbeb7daac47cd3ccab815f9a1c4d958a4a37c3",
+            "sha256": "1f7cf9ce8917a5a3d504f9713ca49c36e0c605744abbab82cd31979915b5585d"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre32.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "6fe3c5ab7e3bbe371018496a0a1ad89e6a6d983c",
+            "sha256": "5def7511cdd3968a01cf6270433f34889bc197c6e1d35febb0f9b6e62b9197c9"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_get_substring.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "2bdcbd588f78bb4a1b9f2300b3a350fc3fab583c",
+            "sha256": "5929e160e6c24610614da399b5a48b5b54eb9fd6c2b0727827fcae42bdf6fa1c"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_jit_exec.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "d10e7b3893bfca681eafaf9ab58e5d2d5243047f",
+            "sha256": "13aef7fb3df09e4365792d78c170757ccbc18efff21ae0edfcc48d0445a40093"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcreposix.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "4efa31264eec256ab095692b845378401ceb5593",
+            "sha256": "62cb7a13a033dfb7b90ac88dd4c3f26f994c6ce707c15c4a102728d410930a07"
+          }
+        },
+        {
+          "path": "/usr/bin/pcregrep",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "361ca0c0ff2f446b74434a20616daa35d10feef2",
+            "sha256": "d24a0eea9fccffec8127cf3c548c2e115321a30a22b9abd33e3a55e69111fe3a"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_compile.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "d6838e2185eeffd8df5b531bcd25a210f8e894ad",
+            "sha256": "d3e538afcc263a962581f1fa7cb35882a85bf681dda1856ec3af55a0066d1a95"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_free_study.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "ed84e2062742898a9c07df6375a2e5ea197700b8",
+            "sha256": "6b56becdd9224aa6210e0eb6f965cec36f33f224b07a8707cefad0872c9e0ddb"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcrepattern.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "beaf8a1ff8a56f1bf69cb79dae39bf359e79fb74",
+            "sha256": "c7686043de054f985e0723969b456e08c86b1b15a43db1c67c366963d8b5a807"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcreapi.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "13a3d57593261c89858a90466b2b0299d2102359",
+            "sha256": "6941cc1f09b9f6934e497301ca8e6c7a359fc94577f2cf835c79ab67bb56ed24"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcrecallout.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "cd1d6974ec5df153454e339021a9087720bce4e6",
+            "sha256": "1557ed06851c266b57220b97c8dd1cdb2334bd728e8eaee994486ba77badca17"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcredemo.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "1558880f723959a2f2d03a5d7e70ff042ccb5070",
+            "sha256": "d49570d467396d10c554cfc5020d33e794864ab49f8596d1416252bad7b0a08e"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcrematching.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "8ec9cd619d7be6a94f7f536e8c394d860c6257d7",
+            "sha256": "c5afdfbf6ef736026d0af74368f5da1e3041ce4b241ef62cc8407e53e3631953"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/AUTHORS",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "310363135a7382c1fd2358391ed4ffdfb17bee5a",
+            "sha256": "27c960c4c02e24b2f1aa40d47dddf3a35cf1b6e5eceefaa536ed90177f6ca2a3"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/README",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "44fbeb7daac47cd3ccab815f9a1c4d958a4a37c3",
+            "sha256": "1f7cf9ce8917a5a3d504f9713ca49c36e0c605744abbab82cd31979915b5585d"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/NON-AUTOTOOLS-BUILD.txt",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "a9f5af8b0a87fcc96df0f8601390decaa0499962",
+            "sha256": "e92da65165205bc253c5495eb4539b6da4655ad2390c099198115d15ce8fc84d"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_study.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "6d394a4615a943c43204421fe3453269bb5bafc4",
+            "sha256": "073cd842e9eee11f5c3155b66f823a205af6df0e9365ab275c8ea4fb6a8a599d"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/LICENCE",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "936db4f914d8b9a516ac93a3bf7856c8bfeb6855",
+            "sha256": "51b3dea44f63338b84b9c97b3d793826a8397309068cf9379a423216ab8ea5b2"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_assign_jit_stack.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "967e07c8fae222cee746d8bfbb8cdebf3339e528",
+            "sha256": "978388a268d26dbbd49e458b39e33c0b948055461e3163b5fe42383351f74fc9"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_exec.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "41ee7c6b47c9a2431b85ce8e3bc5d61e8efdc26f",
+            "sha256": "4d1a7b7faed38d5a16dc706085f4ae83bb4a849ea2f4d7a15e7a07b83723bec7"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcrelimits.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "227fb7908d64c83690d4b559deba5b59627ae2ad",
+            "sha256": "a72349ea60630c45ea0ef848eff8959f4a27808f101ce94c7ec3ef42572903d8"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_compile2.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "9db0309ebe14824be3d79e96e15648f0cca9d3c8",
+            "sha256": "58ad9115a332db73807c1014efd0a89819fbfb64dedafac10922573df6b3ad06"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_free_substring.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "47b1692da59bbc5f2f7c46750278c263d435ee74",
+            "sha256": "893b6cb61d3586c8be88a09b82f4437255dc0cd0ef68823cd163076aaf132245"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_free_substring_list.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "f7ba7d05b0d1d7cbfca5dee0a0934d4b8ceb6d9f",
+            "sha256": "da8b3d404a180035b3901b802aaa1a84d1ffc00635a3960b108ddeb7f6975de8"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_refcount.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "9c1c37c47fd02fc81a0fc06fda140e0e77df8e7a",
+            "sha256": "bcdc552b5ef7dbd9f31bf24459d160b9e84da972715479f8295a1dd6e6cf5a64"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_get_stringtable_entries.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "758faca7b39ed6a5f15097270311fc27bf8a72aa",
+            "sha256": "e7670e707d5097657c54bb28caf158f0fa5b8c8ec1fa134c4f378689f7c62510"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcresample.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "ec6ca6ed0c0ee4e499d02eeac3b7ae3de0612099",
+            "sha256": "9d21477a6f04a1cff3f37582a455ce4ce0f68977c644921cc91976f18e78d86e"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcrestack.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "856cef93cd8bb1ac5a901b9d6fd4035afbaf5064",
+            "sha256": "48d8a5afb5ee4a587768b0033b5ff69aafb16d37ffc564a6456bd10f7e43015c"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcretest.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "4eb1f869c2c7266ab004e611e15d89c0251f4a66",
+            "sha256": "a449956ead49a25aefece6c5cede2fa665f18768181213e0d0dc1ca62902e022"
+          }
+        },
+        {
+          "path": "/usr/lib/libpcreposix.so.0.0.7",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "f0f4f44597f27ae6db04b33b7d47a497d0fc0e8f",
+            "sha256": "c3166b85646d14bab62df7bb53d5465eae67d3eb39a45f57123dd612783f68a8"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "cfd6b9689df7a5ac57de2be7e728f93151cbf65d",
+            "sha256": "9720883c8ca6a98713e01a1fa7fa36f13c31627deb91a2d3db732473c157c4e2"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_dfa_exec.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "edd5d0c56abaadc0ffba1404d58420788f49d7ea",
+            "sha256": "f6d8f490d440b4ddf411a0e8273b9cfa179ad93bfcb3be5efe7ff8bb4f24a1d3"
+          }
+        },
+        {
+          "path": "/usr/share/doc/pcre/html/pcre_version.html",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "1eea3a06a6a2eb94ee04c3180a4148fec0ff2859",
+            "sha256": "bcc32e6f56972b256eca12a3927c6ea7ab27312d862ab4c8b87d54a3b9651efc"
+          }
+        }
+      ]
+    },
+    {
+      "type": "apk",
+      "namespace": "wolfi",
+      "name": "wolfi-baselayout",
+      "version": "20230201-r15",
+      "purl": "pkg:apk/wolfi/wolfi-baselayout@20230201-r15?os_name=wolfi&os_version=rolling",
+      "description": "baselayout data for Wolfi",
+      "licenses": [
+        "MIT"
+      ],
+      "size": 12164,
+      "installed_size": 122509,
+      "locations": [
+        {
+          "path": "/lib/apk/db/installed",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250"
+        },
+        {
+          "path": "/var/lib/db/sbom/wolfi-baselayout-20230201-r15.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "5f54978cc0782cf573fe89222fc9c78ce13edf2f",
+            "sha256": "2553d473dbfb8842254573d68cd3e857b2e9546fb746d8ae7fc3c243c9eca8ca"
+          }
+        }
+      ],
+      "files": [
+        {
+          "path": "/etc/profile.d/locale.sh",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "4bc8fe596ef5996c5f572f32b61a94ec7515a01c",
+            "sha256": "84eb9034099d759ff08e6da5a731cacfc63a319547ad0f1dfc1c64853aca93f2"
+          }
+        },
+        {
+          "path": "/etc/hosts",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "043eb324a653456caa1a73e2e2d49f77792bb0c5",
+            "sha256": "e3998dbe02b51dada33de87ae43d18a93ab6915b9e34f5a751bf2b9b25a55492"
+          }
+        },
+        {
+          "path": "/etc/protocols",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "a262a5a77be01aad99a98cf20ff28735da3cac37",
+            "sha256": "a90a2be9c2a88be6fbfc1fc73ba76f34698377bb19513e5de503dbb0bfe13be1"
+          }
+        },
+        {
+          "path": "/etc/os-release",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "d084668df76a7b28d8fca58f9638c5c5f454c950",
+            "sha256": "8209665b39efdb89514d7cadc50b7ffc3e64dff2cd05736cb04ea078a1a9a24a"
+          }
+        },
+        {
+          "path": "/etc/profile",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "25aeb4d378af5dd1f260588869ac19b0df6481aa",
+            "sha256": "8adf547453fe02fdc92e90424bffea4130bf88cc772a492b74912fb50a85c467"
+          }
+        },
+        {
+          "path": "/etc/secfixes.d/wolfi",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "5fff5aea306234708b1952c565904638ddb8c477",
+            "sha256": "fe0d31329e650f504c836dc259f5509cbfe6431920bf4b2b5b1d75dd02083145"
+          }
+        },
+        {
+          "path": "/etc/shells",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "611f0df9a9db1911e7f93d8cc229ef6248026048",
+            "sha256": "35fa7f9244d299e08104d223b43e92d746dadb7d7b2d7df6281a60f675b0237d"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/wolfi-baselayout-20230201-r15.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "5f54978cc0782cf573fe89222fc9c78ce13edf2f",
+            "sha256": "2553d473dbfb8842254573d68cd3e857b2e9546fb746d8ae7fc3c243c9eca8ca"
+          }
+        },
+        {
+          "path": "/etc/group",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "17c24694846e8d6d24155abb26a5e7fa17cb36af",
+            "sha256": "2d1d74e13ac5221442d72eb34de9ddb9203021c04d0aae916f4ff6b2e0525dd9"
+          }
+        },
+        {
+          "path": "/etc/host.conf",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "b10cafadc043aec4056a948914f011bc39d2ec13",
+            "sha256": "380f5fe21d755923b44203b58ca3c8b9681c485d152bd5d7e3914f67d821d32a"
+          }
+        },
+        {
+          "path": "/etc/nsswitch.conf",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "ef732648b323a542f701fc1133eb65b9c81adf8d",
+            "sha256": "b0e81dd0825cba9e39affd4c64f86e3ab983bb731789f19819215c0eadeab7be"
+          }
+        },
+        {
+          "path": "/etc/passwd",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "6c291b0586c1218b83e1a9197072c0e292809b7c",
+            "sha256": "73ec2629345d81f946b735ec0593572d75b74ebf9acded941399a0f3ebc9b492"
+          }
+        },
+        {
+          "path": "/etc/services",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "f562c2bf922d2a0e0c1fb4567cd461d48edbc907",
+            "sha256": "d85f9ab44e46d6605d749935cf9827a38f767b0e5e56ae8d948ef67e0759e52d"
+          }
+        },
+        {
+          "path": "/etc/shadow",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "92816da722d3af39826c99a1259a78f779cb86e3",
+            "sha256": "db15a4df597dcb86fad29a8191cbc6b629ba3ff2d97d038c0727617f5d347176"
+          }
+        }
+      ]
+    },
+    {
+      "type": "apk",
+      "namespace": "wolfi",
+      "name": "zlib",
+      "version": "1.3.1-r4",
+      "purl": "pkg:apk/wolfi/zlib@1.3.1-r4?os_name=wolfi&os_version=rolling",
+      "description": "a library implementing the zlib compression algorithms",
+      "licenses": [
+        "MPL-2.0",
+        "MIT"
+      ],
+      "size": 61439,
+      "installed_size": 159464,
+      "locations": [
+        {
+          "path": "/lib/apk/db/installed",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250"
+        },
+        {
+          "path": "/var/lib/db/sbom/zlib-1.3.1-r4.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "b704669ac7787c103688e8c1aa16147078f6a294",
+            "sha256": "65b385d6fc3daff34d2041d93231d6752a9baf121a864a9408c87bb1bf79e5a8"
+          }
+        }
+      ],
+      "files": [
+        {
+          "path": "/lib/libz.so.1.3.1",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "b3a3f94762a2a00c78306a1f857eba5f3bae2532",
+            "sha256": "96ee83325af7ba5df9c9808d768353bf63e799d89097c0446515d11aaa9af970"
+          }
+        },
+        {
+          "path": "/usr/share/man/man3/zlib.3",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "8b51ba03f96326e477af4673facb4c9b87ea1b4e",
+            "sha256": "5aadb3f129c4c7e29f28bb6c5954dea061df3046d0fe3e134aff2ef4a217b1d6"
+          }
+        },
+        {
+          "path": "/var/lib/db/sbom/zlib-1.3.1-r4.spdx.json",
+          "digest": "sha256:2de06df86a1d083f2ab89078e8589943bb3c007ba48cf7f2f471926b031e9469",
+          "diff_id": "sha256:7b4d7ddb17fda7676843dddc9cb96f989a8d64ef1f79dc2662275e590fef3250",
+          "file_digests": {
+            "sha1": "b704669ac7787c103688e8c1aa16147078f6a294",
+            "sha256": "65b385d6fc3daff34d2041d93231d6752a9baf121a864a9408c87bb1bf79e5a8"
+          }
+        }
+      ]
+    }
+  ],
+  "descriptor": {
+    "name": "docker-scout",
+    "version": "1.13.0",
+    "sbom_version": "11"
+  }
+}
+

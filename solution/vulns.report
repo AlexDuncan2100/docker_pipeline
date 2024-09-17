@@ -1,0 +1,18 @@
+
+
+## Overview
+
+                    │       Analyzed Image         
+────────────────────┼──────────────────────────────
+  Target            │  mywebapp:SECURE             
+    digest          │  2504a3082f4d                
+    platform        │ linux/amd64                  
+    vulnerabilities │    0C     0H     0M     0L   
+    size            │ 10 MB                        
+    packages        │ 19                           
+
+
+## Packages and Vulnerabilities
+
+  No vulnerable packages detected
+

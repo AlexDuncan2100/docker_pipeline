@@ -1,0 +1,4 @@
+#https://docs.docker.com/reference/cli/docker/scout/cves/
+docker scout cves $APP_NAME:$VERSION --output ./vulns.report
+docker scout cves $APP_NAME:$VERSION --only-severity critical --exit-code
+docker scout sbom --output $APP_NAME.sbom $APP_NAME:$VERSION
